@@ -7,4 +7,4 @@ class Locators:
     SERVICES = (By.CSS_SELECTOR, 'a.sc-a0f0d973-0:nth-child(2)')
     STACK = (By.CSS_SELECTOR, 'a.sc-a0f0d973-0:nth-child(3)')
     CASES = (By.CSS_SELECTOR, 'a.sc-a0f0d973-0:nth-child(4)')
-    CONTACTS = (By.CLASS_NAME, 'sc-a0f0d973-0 ejfJLl')
+    CONTACTS = (By.CSS_SELECTOR, 'a.sc-a0f0d973-0:nth-child(5)')
