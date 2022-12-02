@@ -34,7 +34,6 @@ class TestCasesPage:
         """
         page = CasesPage(browser, self.url)
         page.open()
-        # page.scroll_to_the_bottom()
         page.expl_wait_for_page_download('cases')
         page.scroll_to_and_click_element(locator)
         page.expl_wait_for_page_download(case)

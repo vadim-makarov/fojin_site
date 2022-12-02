@@ -1,3 +1,5 @@
+import os
+
 import pytest
 import requests
 from selenium import webdriver
@@ -5,9 +7,12 @@ from selenium import webdriver
 from ui_test.pages.locators import MainPageLocators
 from ui_test.pages.main_page import MainPage
 
+username = os.environ.get('USERNAME') or 'username'
+password = os.environ.get('PASSWORD') or 'password'
+
 
 class TestMainPage:
-    url = 'https://dev.fojin.tech/ru'
+    url = f'https://{username}:{password}@dev.fojin.tech/ru'
 
     links_list: list[tuple[str, str]] = [
         MainPageLocators.MAIN_PAGE,
@@ -18,7 +23,7 @@ class TestMainPage:
         MainPageLocators.CONTACTS
     ]
 
-    endpoints = ['', 'about-us', 'services', 'stack', 'cases', 'contacts']
+    endpoints = ['', 'about-us', '', '', 'cases', 'contacts']
 
     bottom_elem_list: list[tuple[str, str]] = [
         MainPageLocators.POLICY,
