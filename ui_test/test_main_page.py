@@ -7,7 +7,7 @@ from ui_test.pages.main_page import MainPage
 
 
 class TestMainPage:
-    url = 'https://fojin.tech/ru'
+    url = 'https://dev.fojin.tech/ru'
 
     links_list: list[tuple[str, str]] = [
         MainPageLocators.MAIN_PAGE,
@@ -42,8 +42,8 @@ class TestMainPage:
         """
         page = MainPage(browser, self.url)
         page.open()
-        page.find_and_click_element(locator)
-        page.expl_wait_for_visibility(endpoint)
+        page.scroll_to_and_click_element(locator)
+        page.expl_wait_for_page_download(endpoint)
         page.should_be_some_page(endpoint)
 
     @pytest.mark.parametrize('element, locator', list(zip(bottom_endpoints, bottom_elem_list)))
@@ -54,9 +54,9 @@ class TestMainPage:
         page = MainPage(browser, self.url)
         page.open()
         page.scroll_to_the_bottom()
-        page.find_and_click_element(MainPageLocators.COOKIES)
-        page.find_and_click_element(locator)
+        page.scroll_to_and_click_element(MainPageLocators.COOKIES)
+        page.scroll_to_and_click_element(locator)
         if element != 'policy':
             page.next_window()
-        page.expl_wait_for_visibility(element)
+        page.expl_wait_for_page_download(element)
         page.should_be_some_page(element)

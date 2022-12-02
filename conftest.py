@@ -10,6 +10,6 @@ def browser():
     # options.headless = False
     options.headless = True
     browser = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()), options=options)
-    # browser.implicitly_wait(2)
+    browser.maximize_window()
     yield browser
     browser.quit()
