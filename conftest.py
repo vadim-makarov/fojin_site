@@ -1,15 +1,31 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 
 
-@pytest.fixture
-def browser():
-    options = webdriver.ChromeOptions()
-    options.headless = False
-    # options.headless = True
-    browser = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()), options=options)
+@pytest.fixture(params=["chrome", "firefox"], scope='class')
+def browser(request):
+    """
+    the fixture downloads the latest driver and creates the browser instance with passed options
+    :param request:
+    :return browser instance:
+    """
+    headless = False  # changes the headless parameter for all browsers
+    match request.param:
+        case "chrome":
+            options = webdriver.ChromeOptions()
+            options.headless = headless
+            browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
+                                       options=options)
+        case "firefox":
+            options = webdriver.FirefoxOptions()
+            options.headless = headless
+            browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()),
+                                        options=options)
+    request.cls.driver = browser
     browser.maximize_window()
     yield browser
     browser.quit()

@@ -8,3 +8,8 @@
 /.env
 /%allure_result_folder%/*
 /.idea/fojin_site.iml
+*/geckodriver.log
+*pytest_cache/
+/geckodriver.log
+
+/%allure_result_folder%/

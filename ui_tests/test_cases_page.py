@@ -1,10 +1,9 @@
 import os
 
 import pytest
-from selenium import webdriver
 
-from ui_test.pages.cases_page import CasesPage
-from ui_test.pages.locators import CasesLocators
+from ui_tests.pages.cases_page import CasesPage
+from ui_tests.pages.locators import CasesLocators
 
 username = os.environ.get('USERNAME') or 'username'
 password = os.environ.get('PASSWORD') or 'password'
@@ -28,7 +27,7 @@ class TestCasesPage:
     ]
 
     @pytest.mark.parametrize('case, locator', list(zip(cases_list, locators)))
-    def test_case_page(self, browser: webdriver.Chrome, case: str, locator: tuple):
+    def test_case_page(self, browser, case: str, locator: tuple):
         """
         test checks availability of each case page(doesn't check content!)
         """
