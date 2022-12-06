@@ -13,7 +13,7 @@ def browser(request):
     :param request:
     :return browser instance:
     """
-    headless = False  # changes the headless parameter for all browsers
+    headless = True  # changes the headless parameter for all browsers
     match request.param:
         case "chrome":
             options = webdriver.ChromeOptions()
