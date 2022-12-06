@@ -18,11 +18,13 @@ def browser(request):
         case "chrome":
             options = webdriver.ChromeOptions()
             options.headless = headless
+            options.add_argument('--no-sandbox')
             browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
                                        options=options)
         case "firefox":
             options = webdriver.FirefoxOptions()
             options.headless = headless
+            options.add_argument('--no-sandbox')
             browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()),
                                         options=options)
     request.cls.driver = browser
