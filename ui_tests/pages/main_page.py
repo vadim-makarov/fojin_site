@@ -29,7 +29,7 @@ class MainPage:
         element = self.browser.find_element(*locator)
         # sleep(60)
         element.location_once_scrolled_into_view
-        WebDriverWait(self.browser, 3).until(EC.element_to_be_clickable(element))
+        WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(element))
         element.click()
 
     def should_be_some_page(self, page_name: str):
@@ -40,10 +40,10 @@ class MainPage:
         html.send_keys(Keys.END)
 
     def expl_wait_for_page_download(self, element: str):
-        WebDriverWait(self.browser, 3).until(EC.url_contains(element))
+        WebDriverWait(self.browser, 5).until(EC.url_contains(element))
 
     def expl_wait_for_elem_visibility(self, locator: tuple):
-        WebDriverWait(self.browser, 3).until(EC.element_to_be_clickable(locator))
+        WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(locator))
 
     def next_window(self):
         new_window = self.browser.window_handles[1]

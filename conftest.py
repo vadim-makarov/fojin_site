@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
 
-@pytest.fixture(params=["chrome", "firefox"], scope='class')
+@pytest.fixture(params=["chrome", 'firefox'], scope='class')
 def browser(request):
     """
     the fixture downloads the latest driver and creates the browser instance with passed options

@@ -1,5 +1,6 @@
 import os
 
+import allure
 import pytest
 import requests
 
@@ -32,6 +33,7 @@ class TestMainPage:
 
     bottom_endpoints = ['policy', 'vk.com/fojin', 't.me/fojin_tech']
 
+    @allure.feature('User can see the main page')
     def test_main_page_response(self):
         """
         server is alive
@@ -39,6 +41,7 @@ class TestMainPage:
         r = requests.get(self.url)
         assert r.status_code == 200, f'Server returned {r.status_code} status code'
 
+    @allure.feature('User can go to all top links')
     @pytest.mark.parametrize('endpoint, locator', list(zip(endpoints, links_list)))
     def test_link_names(self, browser, endpoint: str, locator: tuple):
         """
@@ -50,6 +53,7 @@ class TestMainPage:
         page.expl_wait_for_page_download(endpoint)
         page.should_be_some_page(endpoint)
 
+    @allure.feature('User can go to the policy page and to the social page links')
     @pytest.mark.parametrize('element, locator', list(zip(bottom_endpoints, bottom_elem_list)))
     def test_bottom_elements_are_active(self, element: str, locator: tuple, browser):
         """

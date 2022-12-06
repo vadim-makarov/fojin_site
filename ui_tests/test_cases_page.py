@@ -1,5 +1,6 @@
 import os
 
+import allure
 import pytest
 
 from ui_tests.pages.cases_page import CasesPage
@@ -26,6 +27,7 @@ class TestCasesPage:
         CasesLocators.CASE_9,
     ]
 
+    @allure.feature('User can see all the cases')
     @pytest.mark.parametrize('case, locator', list(zip(cases_list, locators)))
     def test_case_page(self, browser, case: str, locator: tuple):
         """
