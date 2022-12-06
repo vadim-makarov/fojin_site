@@ -13,17 +13,20 @@ def browser(request):
     :param request:
     :return browser instance:
     """
-    headless = True
+    headless = False  # changes the headless parameter for all browsers
     match request.param:
         case "chrome":
             options = webdriver.ChromeOptions()
             options.headless = headless
-            browser = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub', options=options)
+            browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
+                                       options=options)
         case "firefox":
             options = webdriver.FirefoxOptions()
             options.headless = headless
-            browser = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub', options=options)
+            browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()),
+                                        options=options)
     request.cls.driver = browser
     browser.maximize_window()
     yield browser
     browser.quit()
+
