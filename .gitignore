@@ -13,3 +13,4 @@
 /geckodriver.log
 /%allure_result_folder%/
 /allure/
+/report/

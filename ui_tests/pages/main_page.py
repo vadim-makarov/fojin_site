@@ -1,5 +1,3 @@
-from time import sleep
-
 from selenium.common import NoSuchElementException
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
@@ -27,8 +25,10 @@ class MainPage:
 
     def scroll_to_and_click_element(self, locator: tuple):
         element = self.browser.find_element(*locator)
-        # sleep(60)
         element.location_once_scrolled_into_view
+        if locator:
+            if '5' in locator[1]:
+                self.browser.find_element(By.TAG_NAME, 'html').send_keys(Keys.PAGE_UP)
         WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(element))
         element.click()
 
