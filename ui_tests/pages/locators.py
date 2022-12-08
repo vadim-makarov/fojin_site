@@ -24,3 +24,12 @@ class CasesLocators:
     CASE_7 = (By.CSS_SELECTOR, '.case-container-7 > div:nth-child(1) > div:nth-child(1)')
     CASE_8 = (By.CSS_SELECTOR, '.case-container-8 > div:nth-child(1) > div:nth-child(1)')
     CASE_9 = (By.CSS_SELECTOR, '.case-container-9 > div:nth-child(1) > div:nth-child(1)')
+
+class FormLocators:
+    NAME = (By.NAME, 'name')
+    EMAIL =(By.NAME, 'email')
+    NUMBER = (By.NAME, 'phone')
+    ABOUT_PROJECT = (By.NAME, 'about')
+    SEND_BUTTON = (By.CSS_SELECTOR, '#form > div > div > form > div:nth-child(2) > div.sc-63050886-2.gpFpVi')
+    POPUP = (By.CSS_SELECTOR, '#form > div > div > div')
+    FORM = (By.CSS_SELECTOR, '#form > div > div > form')
