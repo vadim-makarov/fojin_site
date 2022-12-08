@@ -1,4 +1,4 @@
-from selenium.common import NoSuchElementException, NoAlertPresentException
+from selenium.common import NoSuchElementException
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -62,6 +62,9 @@ class MainPage:
         self.browser.find_element(*data[0]).send_keys(data[1])
 
     def check_popup_is_presented(self, locator):
+        """
+        Test checks that success message appears
+        """
         popup = self.browser.find_element(*locator)
         print(popup.text)
         assert popup.is_displayed(), 'Not success popup presented'
@@ -76,6 +79,5 @@ class MainPage:
         try:
             self.browser.find_element(*locator)
         except NoSuchElementException:
-           assert not self.is_element_present(locator), 'It seems that success message appeared'
-           assert FormData.UNSUCCESS_TEXT in FormLocators.FORM, 'There is no unsuccessful message in the form'
-
+            assert not self.is_element_present(locator), 'It seems that success message appeared'
+            assert FormData.UNSUCCESSFUL_TEXT in FormLocators.FORM, 'There is no unsuccessful message in the form'
