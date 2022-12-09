@@ -1,6 +1,6 @@
 import allure
 from allure_commons.types import AttachmentType
-from selenium.common import NoSuchElementException
+from selenium.common import NoSuchElementException, TimeoutException
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -45,10 +45,18 @@ class MainPage:
         html.send_keys(Keys.END)
 
     def expl_wait_for_page_download(self, element: str):
-        WebDriverWait(self.browser, 5).until(EC.url_matches(element))
+        try:
+            WebDriverWait(self.browser, 5).until(EC.url_matches(element))
+        except TimeoutException:
+            return False
+        return True
 
     def expl_wait_for_elem_visibility(self, locator: tuple):
-        WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(locator))
+        try:
+            WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(locator))
+        except TimeoutException:
+            return False
+        return True
 
     def next_window(self):
         """
@@ -85,4 +93,5 @@ class MainPage:
             assert FormData.UNSUCCESSFUL_TEXT in FormLocators.FORM, 'There is no unsuccessful message in the form'
 
     def screenshot(self, name: str):
-        allure.attach(self.browser.get_screenshot_as_png(), name=f"Screenshot {name}", attachment_type=AttachmentType.PNG)
+        allure.attach(self.browser.get_screenshot_as_png(), name=f"Screenshot {name}",
+                      attachment_type=AttachmentType.PNG)
