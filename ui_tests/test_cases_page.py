@@ -10,6 +10,7 @@ username = os.environ.get('USERNAME') or 'test_user'
 password = os.environ.get('PASSWORD') or 'hellofojin'
 
 
+@pytest.mark.xfail
 class TestCasesPage:
     url = f'https://{username}:{password}@dev.fojin.tech/ru/cases/'
 
