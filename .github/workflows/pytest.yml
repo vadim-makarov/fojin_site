@@ -23,7 +23,7 @@ jobs:
         run: |
           pytest --browser chrome_headless
       - name: Allure report
-        uses: vadim-makarov/allure-report-action@main
+        uses: vadim-makarov/allure-report-action@master
         if: always()
         id: allure-report
         with:
@@ -33,7 +33,7 @@ jobs:
           allure_history: allure-history
       - name: Deploy report to Github Pages
         if: always()
-        uses: vadim-makarov/actions-gh-pages@main
+        uses: vadim-makarov/actions-gh-pages@master
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
