@@ -5,6 +5,8 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
+from ui_tests.pages.data import FormData
+
 
 @pytest.fixture(params=["chrome"])
 def browser(request):
@@ -29,3 +31,18 @@ def browser(request):
     browser.maximize_window()
     yield browser
     browser.quit()
+
+
+@pytest.fixture()
+def positive_data_case() -> list[tuple[tuple, list]]:
+    """
+    The fixture returns list of tuples with locators and data passed into fields
+    """
+    return list(zip(FormData.LOCATORS, FormData.POSITIVE_CASE))
+
+@pytest.fixture(params=FormData.NEGATIVE_CASES)
+def negative_data_case(request) -> list[tuple[tuple,list]]:
+    """
+    The fixture calls one time for each parameter and return values one by one
+    """
+    return list(zip(FormData.LOCATORS, request.param))
