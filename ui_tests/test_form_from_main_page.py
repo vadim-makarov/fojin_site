@@ -1,7 +1,6 @@
 import os
 
 import allure
-import pytest
 
 from ui_tests.pages.locators import FormLocators
 from ui_tests.pages.main_page import MainPage
@@ -13,8 +12,8 @@ password = os.environ.get('PASSWORD') or 'hellofojin'
 class TestMainPageForm:
     url = f'https://{username}:{password}@dev.fojin.tech/ru'
 
-    @allure.feature('User inputs right credentials')
-    @allure.description('User is scrolling to the bottom and filling the form')
+    @allure.feature('User sends correct data')
+    @allure.description('User is scrolling to the bottom and filling the form with correct data')
     def test_positive_form_data(self, browser, positive_data_case: list):
         """
           Test fills the application with correct data and checks the popup answer

@@ -8,44 +8,29 @@ from webdriver_manager.firefox import GeckoDriverManager
 from ui_tests.pages.data import FormData
 
 
-def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="chrome", help="browser that the automation will run in")
-
-
-@pytest.fixture()
-def browser():
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    browser = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+@pytest.fixture(params=["chrome", "firefox"])
+def browser(request):
+    """
+    the fixture downloads the latest driver and creates the browser instance with passed options
+    """
+    headless = False  # changes the headless parameter for all browsers
+    match request.param:
+        case "chrome":
+            options = webdriver.ChromeOptions()
+            options.headless = headless
+            options.add_argument('--no-sandbox')
+            browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
+                                       options=options)
+        case "firefox":
+            options = webdriver.FirefoxOptions()
+            options.headless = headless
+            options.add_argument('--no-sandbox')
+            browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()),
+                                        options=options)
+    request.cls.driver = browser
+    browser.maximize_window()
     yield browser
     browser.quit()
-
-
-# @pytest.fixture(params=["chrome"])
-# def browser(request):
-#     """
-#     the fixture downloads the latest driver and creates the browser instance with passed options
-#     """
-#     headless = True  # changes the headless parameter for all browsers
-#     match request.param:
-#         case "chrome":
-#             options = webdriver.ChromeOptions()
-#             options.headless = headless
-#             options.add_argument('--no-sandbox')
-#             browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
-#                                        options=options)
-#         case "firefox":
-#             options = webdriver.FirefoxOptions()
-#             options.headless = headless
-#             options.add_argument('--no-sandbox')
-#             browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()),
-#                                         options=options)
-#     request.cls.driver = browser
-#     browser.maximize_window()
-#     yield browser
-#     browser.quit()
 
 
 @pytest.fixture()

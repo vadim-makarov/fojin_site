@@ -2,7 +2,7 @@ name: Fojin site testing
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
         run: pip install pytest-github-actions-annotate-failures
       - name: Test with PyTest
         run: |
-          pytest -n auto
+          pytest
       - name: Allure report
         uses: simple-elf/allure-report-action@master
         if: always()

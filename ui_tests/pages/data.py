@@ -1,4 +1,20 @@
-from ui_tests.pages.locators import FormLocators
+from ui_tests.pages.locators import FormLocators, CasesLocators
+
+
+class CasesData:
+    cases_list = [i for i in '123456789']
+
+    locators: list[tuple[str, str]] = [
+        CasesLocators.CASE_1,
+        CasesLocators.CASE_2,
+        CasesLocators.CASE_3,
+        CasesLocators.CASE_4,
+        CasesLocators.CASE_5,
+        CasesLocators.CASE_6,
+        CasesLocators.CASE_7,
+        CasesLocators.CASE_8,
+        CasesLocators.CASE_9,
+    ]
 
 
 class FormData:
