@@ -40,8 +40,9 @@ def positive_data_case() -> list[tuple[tuple, list]]:
     """
     return list(zip(FormData.LOCATORS, FormData.POSITIVE_CASE))
 
+
 @pytest.fixture(params=FormData.NEGATIVE_CASES)
-def negative_data_case(request) -> list[tuple[tuple,list]]:
+def negative_data_case(request) -> list[tuple[tuple, list]]:
     """
     The fixture calls one time for each parameter and return values one by one
     """
