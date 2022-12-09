@@ -25,7 +25,7 @@ jobs:
         run: pip install pytest-github-actions-annotate-failures
       - name: Test with PyTest
         run: |
-          pytest --browser remote
+          pytest -n auto
       - name: Allure report
         uses: simple-elf/allure-report-action@master
         if: always()
