@@ -7,20 +7,18 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 from ui_tests.pages.data import FormData
 
-capabilities = {
-    "browserName": "chrome",
-    "browserVersion": "105.0",
-    "selenoid:options": {
-        "enableVNC": True,
-        "enableVideo": False
-    }
-}
+
+def pytest_addoption(parser):
+    parser.addoption("--browser", action="store", default="chrome", help="browser that the automation will run in")
 
 
 @pytest.fixture()
 def browser():
-    browser = webdriver.Remote(
-        command_executor="http://localhost:4444/wd/hub", desired_capabilities=capabilities)
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    browser = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
     yield browser
     browser.quit()
 
