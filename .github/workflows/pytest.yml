@@ -10,24 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Starting Selenoid Server
-        uses: ajinx/selenoid@2.0
+      - uses: actions/checkout@v3
       - name: Set up Python 3.11
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.11
       - name: Python Dependency Installation
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        uses: py-actions/py-dependency-install@v3.0.0
       - name: Install plugin
         run: pip install pytest-github-actions-annotate-failures
       - name: Test with PyTest
         run: |
-          pytest --browser remote
+          pytest --browser chrome_headless
       - name: Allure report
-        uses: simple-elf/allure-report-action@master
+        uses: vadim-makarov/allure-report-action@main
         if: always()
         id: allure-report
         with:
@@ -37,7 +33,7 @@ jobs:
           allure_history: allure-history
       - name: Deploy report to Github Pages
         if: always()
-        uses: peaceiris/astions-gh-pages@v2
+        uses: vadim-makarov/actions-gh-pages@main
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
