@@ -39,3 +39,4 @@ class TestCasesPage:
         page.scroll_to_and_click_element(locator)
         page.expl_wait_for_page_download(case)
         page.should_be_some_page(case)
+        page.screenshot(case)

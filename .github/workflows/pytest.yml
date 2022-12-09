@@ -1,15 +1,44 @@
-[[source]]
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
+name: Fojin site testing
 
-[packages]
+on:
+  push:
+    branches: [main]
 
-[dev-packages]
-pytest = "*"
+jobs:
+  build:
 
-[requires]
-python_version = "3.11"
+    runs-on: ubuntu-latest
 
-[scripts]
-test = "pytest"
+    steps:
+      - users: actions/checkout@2
+      - name: Starting Selenoid Server (aerokube/selenoid) within actions
+        uses: ajinx/selenoid@2.0
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Install plugin
+        run: pip install pytest-github-actions-annotate-failures
+      - name: Test with PyTest
+        run: |
+          pytest --browser remote
+      - name: Allure report
+        uses: vadim-makarov/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure-results: allure-results
+          allure-report: allure-report
+          gh_pages: gh-pages
+          allure_history: allure-history
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: vadim-makarov/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
