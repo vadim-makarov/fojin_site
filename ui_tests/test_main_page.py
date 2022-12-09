@@ -7,8 +7,8 @@ import requests
 from ui_tests.pages.locators import MainPageLocators
 from ui_tests.pages.main_page import MainPage
 
-username = os.environ.get('USERNAME') or 'username'
-password = os.environ.get('PASSWORD') or 'password'
+username = os.environ.get('USERNAME') or 'test_user'
+password = os.environ.get('PASSWORD') or 'hellofojin'
 
 
 class TestMainPage:
