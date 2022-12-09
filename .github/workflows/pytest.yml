@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - users: actions/checkout@2
+      - uses: actions/checkout@2
       - name: Starting Selenoid Server (aerokube/selenoid) within actions
         uses: ajinx/selenoid@2.0
       - name: Set up Python 3.11
