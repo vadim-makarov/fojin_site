@@ -25,7 +25,7 @@ def browser(request):
             options.add_argument("--headless")
             options.add_argument("--disable-dev-shm-usage")
             options.add_argument("--no-sandbox")
-            browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
+            browser = webdriver.Firefox(service=FirefoxService(executable_path=GeckoDriverManager(cache_valid_range=1).install()), options=options)
     browser.maximize_window()
     yield browser
     browser.quit()
