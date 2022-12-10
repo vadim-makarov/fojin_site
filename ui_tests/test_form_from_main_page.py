@@ -5,7 +5,7 @@ from ui_tests.pages.main_page import MainPage
 
 
 class TestMainPageForm:
-    url = f'https://dev.fojin.tech/ru'
+    url = f'https://fojin.tech/ru'
 
     @allure.feature('User sends correct data')
     @allure.description('User is scrolling to the bottom and sends correct data')

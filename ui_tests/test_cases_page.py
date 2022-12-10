@@ -5,7 +5,7 @@ from ui_tests.pages.cases_page import CasesPage
 from ui_tests.pages.data import CasesData
 
 
-@pytest.mark.xfail(reason="the test fails in a window mode")
+# @pytest.mark.xfail(reason="the test fails in a window mode")
 class TestCasesPage:
     url = f'https://fojin.tech/ru/cases/'
 
