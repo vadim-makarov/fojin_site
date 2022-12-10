@@ -1,29 +1,31 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
 from ui_tests.pages.data import FormData
 
 
-def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="chrome", help="browser that the automation will run in")
-
-
 @pytest.fixture(params=['chrome', 'firefox'])
 def browser(request):
-    if request.param == 'chrome':
-        options = webdriver.ChromeOptions()
-        options.add_argument("--headless")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--no-sandbox")
-        browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-    if request.param == 'firefox':
-        options = webdriver.FirefoxOptions()
-        options.add_argument("--headless")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--no-sandbox")
-        browser = webdriver.Firefox(GeckoDriverManager().install(), options=options)
+    """
+    the fixture downloads the latest driver and creates the browser instance with passed options
+    """
+    match request.param:
+        case 'chrome':
+            options = webdriver.ChromeOptions()
+            options.add_argument("--headless")
+            options.add_argument("--disable-dev-shm-usage")
+            options.add_argument("--no-sandbox")
+            browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+        case 'firefox':
+            options = webdriver.FirefoxOptions()
+            options.add_argument("--headless")
+            options.add_argument("--disable-dev-shm-usage")
+            options.add_argument("--no-sandbox")
+            browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
     browser.maximize_window()
     yield browser
     browser.quit()
