@@ -1,5 +1,3 @@
-import os
-
 import allure
 import pytest
 import requests
@@ -7,12 +5,9 @@ import requests
 from ui_tests.pages.locators import MainPageLocators
 from ui_tests.pages.main_page import MainPage
 
-username = os.environ.get('USERNAME') or 'test_user'
-password = os.environ.get('PASSWORD') or 'hellofojin'
-
 
 class TestMainPage:
-    url = f'https://{username}:{password}@dev.fojin.tech/ru'
+    url = f'https://fojin.tech/ru'
 
     links_list: list[tuple[str, str]] = [
         MainPageLocators.MAIN_PAGE,

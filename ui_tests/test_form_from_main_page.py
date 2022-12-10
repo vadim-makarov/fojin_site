@@ -1,16 +1,11 @@
-import os
-
 import allure
 
 from ui_tests.pages.locators import FormLocators
 from ui_tests.pages.main_page import MainPage
 
-username = os.environ.get('USERNAME') or 'test_user'
-password = os.environ.get('PASSWORD') or 'hellofojin'
-
 
 class TestMainPageForm:
-    url = f'https://{username}:{password}@dev.fojin.tech/ru'
+    url = f'https://dev.fojin.tech/ru'
 
     @allure.feature('User sends correct data')
     @allure.description('User is scrolling to the bottom and sends correct data')

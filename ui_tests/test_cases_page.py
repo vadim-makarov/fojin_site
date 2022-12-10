@@ -1,18 +1,13 @@
-import os
-
 import allure
 import pytest
 
 from ui_tests.pages.cases_page import CasesPage
 from ui_tests.pages.data import CasesData
 
-username = os.environ.get('USERNAME') or 'test_user'
-password = os.environ.get('PASSWORD') or 'hellofojin'
-
 
 @pytest.mark.xfail(reason="the test fails in a window mode")
 class TestCasesPage:
-    url = f'https://{username}:{password}@dev.fojin.tech/ru/cases/'
+    url = f'https://fojin.tech/ru/cases/'
 
     @allure.feature('User can see all the cases')
     @pytest.mark.parametrize('case, locator', list(zip(CasesData.cases_list, CasesData.locators)))

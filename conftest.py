@@ -8,21 +8,6 @@ from webdriver_manager.firefox import GeckoDriverManager
 from ui_tests.pages.data import FormData
 
 
-# @pytest.fixture()
-# def browser():
-#     """
-#     the fixture downloads the latest driver and creates the browser instance with passed options
-#     """
-#     options = webdriver.ChromeOptions()
-#     options.add_argument("--headless")
-#     options.add_argument("--disable-dev-shm-usage")
-#     options.add_argument("--no-sandbox")
-#     browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-#     browser.maximize_window()
-#     yield browser
-#     browser.quit()
-
-
 @pytest.fixture(params=["chrome", "firefox"])
 def browser(request):
     """
