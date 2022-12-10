@@ -13,7 +13,7 @@ class TestMainPageForm:
     url = f'https://{username}:{password}@dev.fojin.tech/ru'
 
     @allure.feature('User sends correct data')
-    @allure.description('User is scrolling to the bottom and filling the form with correct data')
+    @allure.description('User is scrolling to the bottom and sends correct data')
     def test_positive_form_data(self, browser, positive_data_case: list):
         """
           Test fills the application with correct data and checks the popup answer
@@ -27,7 +27,7 @@ class TestMainPageForm:
         page.check_popup_is_presented(FormLocators.POPUP)
 
     @allure.feature("User sends incorrect data")
-    @allure.description('User is scrolling to the bottom and trying to send wrong data')
+    @allure.description('User is scrolling to the bottom and sends wrong data')
     def test_negative_form_data(self, browser, negative_data_case: list):
         """
           Test fills the application with incorrect data and checks the answer
