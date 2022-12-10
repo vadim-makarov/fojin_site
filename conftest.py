@@ -28,7 +28,7 @@ def browser(request):
     """
     the fixture downloads the latest driver and creates the browser instance with passed options
     """
-    headless = False  # changes the headless parameter for all browsers
+    headless = True  # changes the headless parameter for all browsers
     match request.param:
         case "chrome":
             options = webdriver.ChromeOptions()
