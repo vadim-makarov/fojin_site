@@ -29,6 +29,7 @@ jobs:
       - name: Allure report
         uses: simple-elf/allure-report-action@master
         if: always()
+        continue-on-error: true
         id: allure-report
         with:
           allure-results: allure-results
