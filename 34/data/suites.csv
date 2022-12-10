@@ -1,0 +1,63 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Dec 10 19:05:09 GMT 2022","Sat Dec 10 19:05:12 GMT 2022","3548","ui_tests","test_form_from_main_page","TestMainPageForm","","","test_negative_form_data[negative_data_case1]","User is scrolling to the bottom and sends wrong data"
+"passed","Sat Dec 10 19:05:18 GMT 2022","Sat Dec 10 19:05:22 GMT 2022","3808","ui_tests","test_main_page","TestMainPage","","","test_link_names[-locator0]","
+        user can go to all top links from the main page
+        "
+"skipped","Sat Dec 10 19:04:32 GMT 2022","Sat Dec 10 19:04:39 GMT 2022","7026","ui_tests","test_cases_page","TestCasesPage","","","test_case_page[5-locator4]","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Sat Dec 10 19:05:18 GMT 2022","Sat Dec 10 19:05:22 GMT 2022","3747","ui_tests","test_main_page","TestMainPage","","","test_link_names[about-us-locator1]","
+        user can go to all top links from the main page
+        "
+"skipped","Sat Dec 10 19:04:23 GMT 2022","Sat Dec 10 19:04:31 GMT 2022","8146","ui_tests","test_cases_page","TestCasesPage","","","test_case_page[1-locator0]","
+        test checks availability of each case page(doesn't check content!)
+        "
+"skipped","Sat Dec 10 19:04:40 GMT 2022","Sat Dec 10 19:04:47 GMT 2022","7300","ui_tests","test_cases_page","TestCasesPage","","","test_case_page[3-locator2]","
+        test checks availability of each case page(doesn't check content!)
+        "
+"skipped","Sat Dec 10 19:04:56 GMT 2022","Sat Dec 10 19:05:03 GMT 2022","7287","ui_tests","test_cases_page","TestCasesPage","","","test_case_page[8-locator7]","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Sat Dec 10 19:05:27 GMT 2022","Sat Dec 10 19:05:31 GMT 2022","3867","ui_tests","test_main_page","TestMainPage","","","test_link_names[contacts-locator5]","
+        user can go to all top links from the main page
+        "
+"passed","Sat Dec 10 19:05:13 GMT 2022","Sat Dec 10 19:05:17 GMT 2022","3745","ui_tests","test_form_from_main_page","TestMainPageForm","","","test_negative_form_data[negative_data_case2]","User is scrolling to the bottom and sends wrong data"
+"skipped","Sat Dec 10 19:04:48 GMT 2022","Sat Dec 10 19:04:55 GMT 2022","7298","ui_tests","test_cases_page","TestCasesPage","","","test_case_page[7-locator6]","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Sat Dec 10 19:05:27 GMT 2022","Sat Dec 10 19:05:31 GMT 2022","4170","ui_tests","test_main_page","TestMainPage","","","test_link_names[cases-locator4]","
+        user can go to all top links from the main page
+        "
+"passed","Sat Dec 10 19:05:32 GMT 2022","Sat Dec 10 19:05:36 GMT 2022","4108","ui_tests","test_main_page","TestMainPage","","","test_bottom_elements_are_active[policy-locator0]","
+        user can go to all bottom links from the main page
+        "
+"skipped","Sat Dec 10 19:04:32 GMT 2022","Sat Dec 10 19:04:39 GMT 2022","6941","ui_tests","test_cases_page","TestCasesPage","","","test_case_page[2-locator1]","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Sat Dec 10 19:05:17 GMT 2022","Sat Dec 10 19:05:18 GMT 2022","936","ui_tests","test_main_page","TestMainPage","","","test_main_page_response","
+        server is alive
+        "
+"passed","Sat Dec 10 19:05:23 GMT 2022","Sat Dec 10 19:05:26 GMT 2022","2913","ui_tests","test_main_page","TestMainPage","","","test_link_names[-locator3]","
+        user can go to all top links from the main page
+        "
+"passed","Sat Dec 10 19:05:32 GMT 2022","Sat Dec 10 19:05:43 GMT 2022","11023","ui_tests","test_main_page","TestMainPage","","","test_bottom_elements_are_active[vk.com/fojin-locator1]","
+        user can go to all bottom links from the main page
+        "
+"skipped","Sat Dec 10 19:05:04 GMT 2022","Sat Dec 10 19:05:12 GMT 2022","7413","ui_tests","test_cases_page","TestCasesPage","","","test_case_page[9-locator8]","
+        test checks availability of each case page(doesn't check content!)
+        "
+"skipped","Sat Dec 10 19:04:40 GMT 2022","Sat Dec 10 19:04:47 GMT 2022","7308","ui_tests","test_cases_page","TestCasesPage","","","test_case_page[6-locator5]","
+        test checks availability of each case page(doesn't check content!)
+        "
+"skipped","Sat Dec 10 19:04:23 GMT 2022","Sat Dec 10 19:04:31 GMT 2022","7641","ui_tests","test_cases_page","TestCasesPage","","","test_case_page[4-locator3]","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Sat Dec 10 19:05:04 GMT 2022","Sat Dec 10 19:05:08 GMT 2022","3514","ui_tests","test_form_from_main_page","TestMainPageForm","","","test_negative_form_data[negative_data_case0]","User is scrolling to the bottom and sends wrong data"
+"passed","Sat Dec 10 19:05:13 GMT 2022","Sat Dec 10 19:05:17 GMT 2022","3845","ui_tests","test_form_from_main_page","TestMainPageForm","","","test_negative_form_data[negative_data_case3]","User is scrolling to the bottom and sends wrong data"
+"passed","Sat Dec 10 19:05:44 GMT 2022","Sat Dec 10 19:05:48 GMT 2022","4398","ui_tests","test_main_page","TestMainPage","","","test_bottom_elements_are_active[t.me/fojin_tech-locator2]","
+        user can go to all bottom links from the main page
+        "
+"passed","Sat Dec 10 19:04:58 GMT 2022","Sat Dec 10 19:05:03 GMT 2022","5128","ui_tests","test_form_from_main_page","TestMainPageForm","","","test_positive_form_data","User is scrolling to the bottom and sends correct data"
+"passed","Sat Dec 10 19:05:23 GMT 2022","Sat Dec 10 19:05:26 GMT 2022","3142","ui_tests","test_main_page","TestMainPage","","","test_link_names[-locator2]","
+        user can go to all top links from the main page
+        "
