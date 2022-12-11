@@ -16,6 +16,7 @@ password = os.environ.get('PASSWORD') or 'password'
 class TestMainPage:
     url = f'https://{username}:{password}@dev.fojin.tech/ru'
 
+    @allure.title('The server is alive')
     @severity(severity_level.BLOCKER)
     @allure.feature('User can see the main page')
     def test_main_page_response(self):
@@ -25,6 +26,7 @@ class TestMainPage:
         r = requests.get(self.url)
         assert r.status_code == 200, f'Server returned {r.status_code} status code'
 
+    @allure.title('User can go to all the top links')
     @severity(severity_level.CRITICAL)
     @allure.feature('User can go to all top links')
     @pytest.mark.parametrize('endpoint, locator', list(zip(MainPageData.endpoints, MainPageData.links_list)))
@@ -38,6 +40,7 @@ class TestMainPage:
         page.expl_wait_for_page_download(endpoint)
         page.should_be_some_page(endpoint)
 
+    @allure.title('User can go to all bottom links from the main page')
     @severity(severity_level.MINOR)
     @allure.feature('User can go to the policy page and to the social page links')
     @pytest.mark.parametrize('element, locator',

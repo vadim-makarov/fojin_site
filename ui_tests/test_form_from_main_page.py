@@ -13,6 +13,7 @@ password = os.environ.get('PASSWORD') or 'password'
 class TestMainPageForm:
     url = f'https://{username}:{password}@dev.fojin.tech/ru'
 
+    @allure.title('User sends a correct data into the form')
     @severity(severity_level.CRITICAL)
     @allure.feature('User sends correct data')
     @allure.description('User is scrolling to the bottom and sends correct data')
@@ -28,8 +29,9 @@ class TestMainPageForm:
         page.expl_wait_for_elem_visibility(FormLocators.POPUP)
         page.check_popup_is_presented(FormLocators.POPUP)
 
+    @allure.title('User sends an incorrect data into the request form')
     @severity(severity_level.MINOR)
-    @allure.feature("User sends incorrect data")
+    @allure.feature("User sends a incorrect data")
     @allure.description('User is scrolling to the bottom and sends wrong data')
     def test_negative_form_data(self, browser, negative_data_case: list):
         """

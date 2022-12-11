@@ -8,7 +8,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from ui_tests.pages.data import FormData
 
 
-@pytest.fixture(params=["chrome", "firefox"], scope='class')
+@pytest.fixture(params=["chrome", "firefox"])
 def browser(request):
     """
     the fixture downloads the latest driver and creates the browser instance with passed options
