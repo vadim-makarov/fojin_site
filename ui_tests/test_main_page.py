@@ -1,3 +1,5 @@
+import os
+
 import allure
 import pytest
 import requests
@@ -7,9 +9,12 @@ from ui_tests.pages.data import MainPageData
 from ui_tests.pages.locators import MainPageLocators
 from ui_tests.pages.main_page import MainPage
 
+username = os.environ.get('USERNAME') or 'username'
+password = os.environ.get('PASSWORD') or 'password'
+
 
 class TestMainPage:
-    url = f'https://fojin.tech/ru'
+    url = f'https://{username}:{password}@dev.fojin.tech/ru'
 
     @severity(severity_level.BLOCKER)
     @allure.feature('User can see the main page')
@@ -33,6 +38,7 @@ class TestMainPage:
         page.expl_wait_for_page_download(endpoint)
         page.should_be_some_page(endpoint)
 
+    @severity(severity_level.MINOR)
     @allure.feature('User can go to the policy page and to the social page links')
     @pytest.mark.parametrize('element, locator',
                              list(zip(MainPageData.bottom_endpoints, MainPageData.bottom_elem_list)))

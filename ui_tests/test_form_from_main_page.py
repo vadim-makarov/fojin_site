@@ -1,12 +1,17 @@
+import os
+
 import allure
 from allure import severity, severity_level
 
 from ui_tests.pages.locators import FormLocators
 from ui_tests.pages.main_page import MainPage
 
+username = os.environ.get('USERNAME') or 'username'
+password = os.environ.get('PASSWORD') or 'password'
+
 
 class TestMainPageForm:
-    url = f'https://fojin.tech/ru'
+    url = f'https://{username}:{password}@dev.fojin.tech/ru'
 
     @severity(severity_level.CRITICAL)
     @allure.feature('User sends correct data')
@@ -23,6 +28,7 @@ class TestMainPageForm:
         page.expl_wait_for_elem_visibility(FormLocators.POPUP)
         page.check_popup_is_presented(FormLocators.POPUP)
 
+    @severity(severity_level.MINOR)
     @allure.feature("User sends incorrect data")
     @allure.description('User is scrolling to the bottom and sends wrong data')
     def test_negative_form_data(self, browser, negative_data_case: list):

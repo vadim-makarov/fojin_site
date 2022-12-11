@@ -29,6 +29,9 @@ jobs:
       - name: Test with PyTest
         run: |
           pytest
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
 
       - name: Get Allure history
         uses: actions/checkout@v2

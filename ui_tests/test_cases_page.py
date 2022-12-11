@@ -1,13 +1,18 @@
+import os
+
 import allure
 import pytest
+from allure import severity, severity_level
 
 from ui_tests.pages.cases_page import CasesPage
 from ui_tests.pages.data import CasesData
-from allure import severity, severity_level
+
+username = os.environ.get('USERNAME') or 'username'
+password = os.environ.get('PASSWORD') or 'password'
 
 
 class TestCasesPage:
-    url = f'https://fojin.tech/ru/cases/'
+    url = f'https://{username}:{password}@dev.fojin.tech/ru/cases/'
 
     @severity(severity_level.CRITICAL)
     @allure.feature('User can see all the cases')
