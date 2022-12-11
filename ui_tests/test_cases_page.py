@@ -14,7 +14,7 @@ password = os.environ.get('PASSWORD') or 'password'
 class TestCasesPage:
     url = f'https://{username}:{password}@dev.fojin.tech/ru/cases/'
 
-    @severity(severity_level.CRITICAL)
+    @severity(severity_level.NORMAL)
     @allure.feature('User can see all the cases')
     @pytest.mark.parametrize('case, locator', list(zip(CasesData.cases_list, CasesData.locators)))
     def test_case_page(self, browser, case: str, locator: tuple):
