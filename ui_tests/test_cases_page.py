@@ -3,12 +3,13 @@ import pytest
 
 from ui_tests.pages.cases_page import CasesPage
 from ui_tests.pages.data import CasesData
+from allure import severity, severity_level
 
 
-# @pytest.mark.xfail(reason="the test fails in a window mode")
 class TestCasesPage:
     url = f'https://fojin.tech/ru/cases/'
 
+    @severity(severity_level.CRITICAL)
     @allure.feature('User can see all the cases')
     @pytest.mark.parametrize('case, locator', list(zip(CasesData.cases_list, CasesData.locators)))
     def test_case_page(self, browser, case: str, locator: tuple):

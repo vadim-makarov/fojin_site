@@ -1,4 +1,24 @@
-from ui_tests.pages.locators import FormLocators, CasesLocators
+from ui_tests.pages.locators import FormLocators, CasesLocators, MainPageLocators
+
+
+class MainPageData:
+    links_list: list[tuple[str, str]] = [
+        MainPageLocators.MAIN_PAGE,
+        MainPageLocators.ABOUT_US,
+        MainPageLocators.SERVICES,
+        MainPageLocators.STACK,
+        MainPageLocators.CASES,
+        MainPageLocators.CONTACTS
+    ]
+    endpoints = ['', 'about-us', '', '', 'cases', 'contacts']
+
+    bottom_elem_list: list[tuple[str, str]] = [
+        MainPageLocators.POLICY,
+        MainPageLocators.VK,
+        MainPageLocators.TELEGRAM
+    ]
+
+    bottom_endpoints = ['policy', 'vk.com/fojin', 't.me/fojin_tech']
 
 
 class CasesData:

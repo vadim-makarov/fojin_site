@@ -15,7 +15,7 @@ class MainPageLocators:
 
 
 class CasesLocators:
-    CASE_1 = (By.CSS_SELECTOR, '.case-container-1 > div:nth-child(2) > div:nth-child(1)')  # EdTech
+    CASE_1 = (By.CSS_SELECTOR, '.case-container-1 > div:nth-child(2)')  # EdTech
     CASE_2 = (By.CSS_SELECTOR, '.case-container-2 > div:nth-child(1) > div:nth-child(1)')  # E-commerce
     CASE_3 = (By.CSS_SELECTOR, '.case-container-3 > div:nth-child(1) > div:nth-child(1)')  # Entertainment, marketing
     CASE_4 = (By.CSS_SELECTOR, '.case-container-4 > div:nth-child(2) > div:nth-child(1)')  # Business, B2B

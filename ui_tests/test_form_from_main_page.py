@@ -1,4 +1,5 @@
 import allure
+from allure import severity, severity_level
 
 from ui_tests.pages.locators import FormLocators
 from ui_tests.pages.main_page import MainPage
@@ -7,6 +8,7 @@ from ui_tests.pages.main_page import MainPage
 class TestMainPageForm:
     url = f'https://fojin.tech/ru'
 
+    @severity(severity_level.CRITICAL)
     @allure.feature('User sends correct data')
     @allure.description('User is scrolling to the bottom and sends correct data')
     def test_positive_form_data(self, browser, positive_data_case: list):
