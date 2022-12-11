@@ -18,7 +18,7 @@ class MainPage:
     def open(self):
         self.browser.get(self.url)
 
-    def is_element_present(self, locator):
+    def is_element_present(self, locator: tuple):
         try:
             self.browser.find_element(*locator)
         except NoSuchElementException:
@@ -71,7 +71,7 @@ class MainPage:
         """
         self.browser.find_element(*data[0]).send_keys(data[1])
 
-    def check_popup_is_presented(self, locator):
+    def check_popup_is_presented(self, locator: tuple):
         """
         Test checks that success message appears
         """
@@ -80,7 +80,7 @@ class MainPage:
         assert popup.is_displayed(), 'Not success popup presented'
         assert FormData.SUCCESS_TEXT in popup.text, "No success text presented"
 
-    def check_popup_is_not_presented(self, locator):
+    def check_popup_is_not_presented(self, locator: tuple):
         """
         Test checks that
         error message appears and success message doesn't
@@ -92,6 +92,4 @@ class MainPage:
             assert not self.is_element_present(locator), 'It seems that success message appeared'
             assert FormData.UNSUCCESSFUL_TEXT in FormLocators.FORM, 'There is no unsuccessful message in the form'
 
-    def screenshot(self, name: str):
-        allure.attach(self.browser.get_screenshot_as_png(), name=f"Screenshot {name}",
-                      attachment_type=AttachmentType.PNG)
+

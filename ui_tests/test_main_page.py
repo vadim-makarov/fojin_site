@@ -26,9 +26,9 @@ class TestMainPage:
         r = requests.get(self.url)
         assert r.status_code == 200, f'Server returned {r.status_code} status code'
 
-    @allure.title('User can see and go to the {endpoint} link')
     @severity(severity_level.CRITICAL)
     @allure.feature('User can go to all top links')
+    @allure.title('User can see and go to the "{endpoint}" link')
     @pytest.mark.parametrize('endpoint, locator', list(zip(MainPageData.endpoints, MainPageData.links_list)))
     def test_link_names(self, browser, endpoint: str, locator: tuple):
         """
@@ -40,9 +40,9 @@ class TestMainPage:
         page.expl_wait_for_page_download(endpoint)
         page.should_be_some_page(endpoint)
 
-    @allure.title('User can see and go to the {element} link')
     @severity(severity_level.MINOR)
     @allure.feature('User can go to the policy page and to the social page links')
+    @allure.title('User can see and go to the "{element}" link')
     @pytest.mark.parametrize('element, locator',
                              list(zip(MainPageData.bottom_endpoints, MainPageData.bottom_elem_list)))
     def test_bottom_elements_are_active(self, element: str, locator: tuple, browser):

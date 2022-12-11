@@ -1,4 +1,6 @@
+import allure
 import pytest
+from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
@@ -9,7 +11,7 @@ from ui_tests.pages.data import FormData
 
 
 @pytest.fixture(params=["chrome", "firefox"])
-def browser(request):
+def browser(request) -> webdriver:
     """
     the fixture downloads the latest driver and creates the browser instance with passed options
     """
@@ -26,9 +28,43 @@ def browser(request):
             options.add_argument('--no-sandbox')
             options.add_argument("--disable-dev-shm-usage")
             browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
+    browser.set_window_size(1920, 1080)
     browser.maximize_window()
     yield browser
     browser.quit()
+
+
+# set up a hook to be able to check if a test has failed
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    # execute all other hooks to obtain the report object
+    outcome = yield
+    rep = outcome.get_result()
+
+    # set a report attribute for each phase of a call, which can
+    # be "setup", "call", "teardown"
+
+    setattr(item, "rep_" + rep.when, rep)
+
+
+# check if a test has failed
+@pytest.fixture(scope="function", autouse=True)
+def test_failed_check(request):
+    yield
+    # request.node is an "item" because we use the default
+    # "function" scope
+    if request.node.rep_setup.failed:
+        print("setting up a test failed!", request.node.nodeid)
+    elif request.node.rep_setup.passed:
+        if request.node.rep_call.failed:
+            driver = request.node.funcargs['browser']
+            screenshot(driver, request.node.nodeid)
+            print("executing test failed", request.node.nodeid)
+
+
+def screenshot(browser, name: str):
+    allure.attach(browser.get_screenshot_as_png(), name=f"Screenshot fail_{name}",
+                  attachment_type=AttachmentType.PNG)
 
 
 @pytest.fixture()
