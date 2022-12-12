@@ -1,9 +1,5 @@
 name: Fojin site testing
 
-on:
-  push:
-    branches: [ main ]
-
 jobs:
   build:
 

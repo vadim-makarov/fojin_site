@@ -92,4 +92,3 @@ class MainPage:
             assert not self.is_element_present(locator), 'It seems that success message appeared'
             assert FormData.UNSUCCESSFUL_TEXT in FormLocators.FORM, 'There is no unsuccessful message in the form'
 
-
