@@ -1,5 +1,3 @@
-import allure
-from allure_commons.types import AttachmentType
 from selenium.common import NoSuchElementException, TimeoutException
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
@@ -91,4 +89,3 @@ class MainPage:
         except NoSuchElementException:
             assert not self.is_element_present(locator), 'It seems that success message appeared'
             assert FormData.UNSUCCESSFUL_TEXT in FormLocators.FORM, 'There is no unsuccessful message in the form'
-

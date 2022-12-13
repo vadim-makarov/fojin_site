@@ -34,14 +34,14 @@ def browser(request):
     browser.quit()
 
 
-# set up a hook to be able to check if a test has failed
-    def screenshot(self, item):
-        allure.attach(self.browser.get_screenshot_as_png(), name=f"Screenshot fail_{item.name}",
-                  attachment_type=AttachmentType.PNG)
-
-    @staticmethod
-    def pytest_runtest_teardown(item):
-        MainPage.screenshot(item)
+# # set up a hook to be able to check if a test has failed
+#     def screenshot(self, item):
+#         allure.attach(self.browser.get_screenshot_as_png(), name=f"Screenshot fail_{item.name}",
+#                   attachment_type=AttachmentType.PNG)
+#
+#     @staticmethod
+#     def pytest_runtest_teardown(item):
+#         MainPage.screenshot(item)
 
 
 
