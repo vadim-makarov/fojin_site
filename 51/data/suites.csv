@@ -1,0 +1,122 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Dec 14 12:54:44 GMT 2022","Wed Dec 14 12:54:46 GMT 2022","2574","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""cases"" link","
+        user can go to all top links from the main page
+        "
+"failed","Wed Dec 14 12:53:27 GMT 2022","Wed Dec 14 12:53:34 GMT 2022","7744","ui_tests","test_cases_page","TestCasesPage","","","User can see the 4 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:52:26 GMT 2022","Wed Dec 14 12:52:28 GMT 2022","2666","ui_tests","test_cases_page","TestCasesPage","","","User can see the 8 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"failed","Wed Dec 14 12:52:50 GMT 2022","Wed Dec 14 12:52:59 GMT 2022","8976","ui_tests","test_form_from_main_page","TestMainPageForm","","","User sends a correct data into the form","User is scrolling to the bottom and sends correct data"
+"failed","Wed Dec 14 12:52:49 GMT 2022","Wed Dec 14 12:52:57 GMT 2022","8201","ui_tests","test_cases_page","TestCasesPage","","","User can see the 1 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"failed","Wed Dec 14 12:54:27 GMT 2022","Wed Dec 14 12:54:35 GMT 2022","7534","ui_tests","test_cases_page","TestCasesPage","","","User can see the 9 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"failed","Wed Dec 14 12:54:03 GMT 2022","Wed Dec 14 12:54:11 GMT 2022","7706","ui_tests","test_cases_page","TestCasesPage","","","User can see the 7 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:52:26 GMT 2022","Wed Dec 14 12:52:28 GMT 2022","2707","ui_tests","test_cases_page","TestCasesPage","","","User can see the 3 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:54:12 GMT 2022","Wed Dec 14 12:54:16 GMT 2022","3872","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""cases"" link","
+        user can go to all top links from the main page
+        "
+"failed","Wed Dec 14 12:53:51 GMT 2022","Wed Dec 14 12:53:59 GMT 2022","8527","ui_tests","test_cases_page","TestCasesPage","","","User can see the 6 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:54:24 GMT 2022","Wed Dec 14 12:54:27 GMT 2022","3045","ui_tests","test_main_page","TestMainPage","","","User can see and go to the """" link","
+        user can go to all top links from the main page
+        "
+"passed","Wed Dec 14 12:54:46 GMT 2022","Wed Dec 14 12:54:49 GMT 2022","2856","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""contacts"" link","
+        user can go to all top links from the main page
+        "
+"passed","Wed Dec 14 12:54:31 GMT 2022","Wed Dec 14 12:54:33 GMT 2022","2553","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""about-us"" link","
+        user can go to all top links from the main page
+        "
+"failed","Wed Dec 14 12:53:01 GMT 2022","Wed Dec 14 12:53:09 GMT 2022","8057","ui_tests","test_cases_page","TestCasesPage","","","User can see the 2 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:53:31 GMT 2022","Wed Dec 14 12:53:35 GMT 2022","3107","ui_tests","test_form_from_main_page","TestMainPageForm","","","User sends an incorrect data into the request form","User is scrolling to the bottom and sends wrong data"
+"passed","Wed Dec 14 12:54:53 GMT 2022","Wed Dec 14 12:54:58 GMT 2022","4628","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""t.me/fojin_tech"" link","
+        user can go to all bottom links from the main page
+        "
+"passed","Wed Dec 14 12:54:04 GMT 2022","Wed Dec 14 12:54:07 GMT 2022","3167","ui_tests","test_main_page","TestMainPage","","","User can see and go to the """" link","
+        user can go to all top links from the main page
+        "
+"passed","Wed Dec 14 12:53:17 GMT 2022","Wed Dec 14 12:53:21 GMT 2022","3757","ui_tests","test_form_from_main_page","TestMainPageForm","","","User sends an incorrect data into the request form","User is scrolling to the bottom and sends wrong data"
+"passed","Wed Dec 14 12:52:17 GMT 2022","Wed Dec 14 12:52:20 GMT 2022","3715","ui_tests","test_cases_page","TestCasesPage","","","User can see the 6 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:53:39 GMT 2022","Wed Dec 14 12:53:43 GMT 2022","3389","ui_tests","test_form_from_main_page","TestMainPageForm","","","User sends an incorrect data into the request form","User is scrolling to the bottom and sends wrong data"
+"passed","Wed Dec 14 12:52:29 GMT 2022","Wed Dec 14 12:52:35 GMT 2022","5430","ui_tests","test_cases_page","TestCasesPage","","","User can see the 4 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:55:01 GMT 2022","Wed Dec 14 12:55:05 GMT 2022","3967","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""vk.com/fojin"" link","
+        user can go to all bottom links from the main page
+        "
+"failed","Wed Dec 14 12:53:14 GMT 2022","Wed Dec 14 12:53:22 GMT 2022","7761","ui_tests","test_cases_page","TestCasesPage","","","User can see the 3 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:53:59 GMT 2022","Wed Dec 14 12:54:02 GMT 2022","3914","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""about-us"" link","
+        user can go to all top links from the main page
+        "
+"passed","Wed Dec 14 12:54:37 GMT 2022","Wed Dec 14 12:54:39 GMT 2022","2253","ui_tests","test_main_page","TestMainPage","","","User can see and go to the """" link","
+        user can go to all top links from the main page
+        "
+"passed","Wed Dec 14 12:54:51 GMT 2022","Wed Dec 14 12:55:02 GMT 2022","11261","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""vk.com/fojin"" link","
+        user can go to all bottom links from the main page
+        "
+"passed","Wed Dec 14 12:52:36 GMT 2022","Wed Dec 14 12:52:39 GMT 2022","2757","ui_tests","test_cases_page","TestCasesPage","","","User can see the 5 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:53:46 GMT 2022","Wed Dec 14 12:53:49 GMT 2022","3375","ui_tests","test_form_from_main_page","TestMainPageForm","","","User sends an incorrect data into the request form","User is scrolling to the bottom and sends wrong data"
+"passed","Wed Dec 14 12:52:29 GMT 2022","Wed Dec 14 12:52:35 GMT 2022","5558","ui_tests","test_cases_page","TestCasesPage","","","User can see the 9 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:53:24 GMT 2022","Wed Dec 14 12:53:28 GMT 2022","3398","ui_tests","test_form_from_main_page","TestMainPageForm","","","User sends an incorrect data into the request form","User is scrolling to the bottom and sends wrong data"
+"passed","Wed Dec 14 12:53:52 GMT 2022","Wed Dec 14 12:53:58 GMT 2022","5459","ui_tests","test_main_page","TestMainPage","","","User can see and go to the """" link","
+        user can go to all top links from the main page
+        "
+"passed","Wed Dec 14 12:54:39 GMT 2022","Wed Dec 14 12:54:42 GMT 2022","2240","ui_tests","test_main_page","TestMainPage","","","User can see and go to the """" link","
+        user can go to all top links from the main page
+        "
+"failed","Wed Dec 14 12:54:15 GMT 2022","Wed Dec 14 12:54:23 GMT 2022","7633","ui_tests","test_cases_page","TestCasesPage","","","User can see the 8 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:52:21 GMT 2022","Wed Dec 14 12:52:25 GMT 2022","3224","ui_tests","test_cases_page","TestCasesPage","","","User can see the 2 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:52:40 GMT 2022","Wed Dec 14 12:52:46 GMT 2022","6795","ui_tests","test_form_from_main_page","TestMainPageForm","","","User sends a correct data into the form","User is scrolling to the bottom and sends correct data"
+"passed","Wed Dec 14 12:52:21 GMT 2022","Wed Dec 14 12:52:25 GMT 2022","3084","ui_tests","test_cases_page","TestCasesPage","","","User can see the 7 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:55:06 GMT 2022","Wed Dec 14 12:55:09 GMT 2022","2901","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""policy"" link","
+        user can go to all bottom links from the main page
+        "
+"failed","Wed Dec 14 12:53:39 GMT 2022","Wed Dec 14 12:53:46 GMT 2022","7538","ui_tests","test_cases_page","TestCasesPage","","","User can see the 5 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:52:17 GMT 2022","Wed Dec 14 12:52:20 GMT 2022","3736","ui_tests","test_cases_page","TestCasesPage","","","User can see the 1 case","
+        test checks availability of each case page(doesn't check content!)
+        "
+"passed","Wed Dec 14 12:53:06 GMT 2022","Wed Dec 14 12:53:10 GMT 2022","4229","ui_tests","test_form_from_main_page","TestMainPageForm","","","User sends an incorrect data into the request form","User is scrolling to the bottom and sends wrong data"
+"passed","Wed Dec 14 12:54:48 GMT 2022","Wed Dec 14 12:54:52 GMT 2022","3964","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""policy"" link","
+        user can go to all bottom links from the main page
+        "
+"passed","Wed Dec 14 12:53:01 GMT 2022","Wed Dec 14 12:53:05 GMT 2022","3929","ui_tests","test_form_from_main_page","TestMainPageForm","","","User sends an incorrect data into the request form","User is scrolling to the bottom and sends wrong data"
+"passed","Wed Dec 14 12:53:12 GMT 2022","Wed Dec 14 12:53:16 GMT 2022","4261","ui_tests","test_form_from_main_page","TestMainPageForm","","","User sends an incorrect data into the request form","User is scrolling to the bottom and sends wrong data"
+"passed","Wed Dec 14 12:54:08 GMT 2022","Wed Dec 14 12:54:11 GMT 2022","3174","ui_tests","test_main_page","TestMainPage","","","User can see and go to the """" link","
+        user can go to all top links from the main page
+        "
+"passed","Wed Dec 14 12:55:10 GMT 2022","Wed Dec 14 12:55:13 GMT 2022","2795","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""t.me/fojin_tech"" link","
+        user can go to all bottom links from the main page
+        "
+"passed","Wed Dec 14 12:53:50 GMT 2022","Wed Dec 14 12:53:51 GMT 2022","833","ui_tests","test_main_page","TestMainPage","","","The server is alive","
+        server is alive
+        "
+"passed","Wed Dec 14 12:54:17 GMT 2022","Wed Dec 14 12:54:21 GMT 2022","3662","ui_tests","test_main_page","TestMainPage","","","User can see and go to the ""contacts"" link","
+        user can go to all top links from the main page
+        "
