@@ -1,5 +1,3 @@
-from asyncio import sleep
-
 import allure
 import pytest
 from allure_commons.types import AttachmentType
