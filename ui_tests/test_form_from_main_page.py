@@ -17,6 +17,7 @@ class TestMainPageForm:
     @severity(severity_level.CRITICAL)
     @allure.feature('User sends correct data')
     @allure.description('User is scrolling to the bottom and sends correct data')
+
     def test_positive_form_data(self, browser, positive_data_case: list):
         """
           Test fills the application with correct data and checks the popup answer

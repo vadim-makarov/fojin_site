@@ -1,3 +1,5 @@
+from asyncio import sleep
+
 import allure
 import pytest
 from allure_commons.types import AttachmentType
@@ -29,20 +31,16 @@ def browser(request):
             options.add_argument("--disable-dev-shm-usage")
             browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
     browser.set_window_size(1920, 1080)
-    browser.maximize_window()
+    failed_before = request.session.testsfailed
     yield browser
+    if request.session.testsfailed != failed_before:
+        test_name = request.node.name
+        screenshot(browser, test_name)
     browser.quit()
 
 
-# # set up a hook to be able to check if a test has failed
-#     def screenshot(self, item):
-#         allure.attach(self.browser.get_screenshot_as_png(), name=f"Screenshot fail_{item.name}",
-#                   attachment_type=AttachmentType.PNG)
-#
-#     @staticmethod
-#     def pytest_runtest_teardown(item):
-#         MainPage.screenshot(item)
-
+def screenshot(browser, name: str):
+    allure.attach(browser.get_screenshot_as_png(), name=f"Screenshot {name}", attachment_type=AttachmentType.PNG)
 
 
 @pytest.fixture()
