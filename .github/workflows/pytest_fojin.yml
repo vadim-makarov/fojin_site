@@ -1,5 +1,7 @@
 name: Fojin site testing
 
+on: push
+
 jobs:
   build:
 
