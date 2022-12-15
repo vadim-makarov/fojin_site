@@ -53,7 +53,7 @@ class TestMainPage:
         page.open()
         page.scroll_to_the_bottom()
         if page.is_element_present(MainPageLocators.COOKIES):
-            page.scroll_to_and_click_element(MainPageLocators.COOKIES)  # firefox issue
+            page.scroll_to_and_click_element(MainPageLocators.COOKIES)
         page.scroll_to_and_click_element(locator)
         if element != 'policy':
             page.next_window()
